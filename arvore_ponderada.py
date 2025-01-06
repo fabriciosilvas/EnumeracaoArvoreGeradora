@@ -16,6 +16,18 @@ class ArvorePonderada:
     def size(self) -> int:
         return self.quantidadeArestas
 
+    def __str__(self) -> str:
+        string: str = "ÁRVORE\n"
+
+        for aresta in self.arestas:
+            string += str(aresta)
+
+
+        string += "\n"
+
+        return string
+
+
     def inserirAresta(self, aresta: ArestaPonderada) -> bool:
         if self.quantidadeArestas == self.quantidadeVertices - 1:
             return False

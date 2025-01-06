@@ -1,5 +1,6 @@
 from particao import Particao
 from typing import  Optional
+from math import inf
 
 
 class HeapMinimaParticao:
@@ -44,7 +45,7 @@ class HeapMinimaParticao:
 
     def inserirElemento(self, elemento: Particao) -> None:
         self.tamanhoHeap += 1
-        novaParticao: Particao = Particao(self.quantidadeVertices)
+        novaParticao: Particao = Particao(self.quantidadeVertices, inf)
         self.vetorElementos.append(novaParticao)
         self.diminuirValorElemento(self.tamanhoHeap - 1, elemento)
 
@@ -58,6 +59,7 @@ class HeapMinimaParticao:
 
         elementoMinimo: Particao = self.vetorElementos[0]
         self.vetorElementos[0] = self.vetorElementos[self.tamanhoHeap - 1]
+        self.vetorElementos.pop(self.tamanhoHeap - 1)
         self.tamanhoHeap -= 1
 
         self.minHeapfy(0)
@@ -69,7 +71,7 @@ class HeapMinimaParticao:
 
     def diminuirValorElemento(self, tamanhoHeap: int, elemento: Particao) -> None:
         if elemento > self.vetorElementos[tamanhoHeap]:
-            print("Erro")
+            print("Erro2")
             return
 
         self.vetorElementos[tamanhoHeap] = elemento

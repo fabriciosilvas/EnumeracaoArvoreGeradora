@@ -82,6 +82,7 @@ class HeapMinimaAresta:
 
         elementoMinimo: ArestaPonderada = self.vetorElementos[0]
         self.vetorElementos[0] = self.vetorElementos[self.tamanhoHeap - 1]
+        self.vetorElementos.pop(self.tamanhoHeap - 1)
         self.tamanhoHeap -= 1
 
         self.minHeapfy(0)
@@ -98,7 +99,7 @@ class HeapMinimaAresta:
 
     def diminuirValorElemento(self, tamanhoHeap: int, elemento: ArestaPonderada) -> None:
         if elemento > self.vetorElementos[tamanhoHeap]:
-            print("Erro")
+            print("Erro1")
             return
 
         self.vetorElementos[tamanhoHeap] = elemento

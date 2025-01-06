@@ -4,6 +4,11 @@ class ArestaPonderada:
         self.verticeInicial = verticeInicial
         self.verticeFinal = verticeFinal
 
+    def copia(self) -> "ArestaPonderada":
+        novaAresta: ArestaPonderada = ArestaPonderada(self.getVerticeInicial, self.verticeFinal, self.peso)
+
+        return novaAresta
+
     def getVerticeInicial(self) -> int:
         return  self.verticeInicial
 
@@ -31,8 +36,11 @@ class ArestaPonderada:
 
 if "__main__" == __name__:
     a = ArestaPonderada(5, 5, 1)
-    b = ArestaPonderada(5, 5, 2)
+    l = list()
+    l.append(a)
+    v = l.copy()
+    
 
-    print(a != b)
+    print(l[0] is v[0])
 
 
