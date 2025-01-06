@@ -1,0 +1,71 @@
+ALGORITHM 1: GENERATE SPANNING TREES IN ORDER OF INCREASING COST
+Input:  Graph G(V,E) and weight function w
+    - como representar o grafo da melhor forma?
+        * matriz de adjacência ou lista de adjacência?
+
+
+Output:  Output_File (all spanning trees of G, sorted in order of increasing cost)
+
+
+
+List = {A}
+    - em A, todas as arestas são ABERTAS
+    - será uma lista de partição?
+        * representá-la como uma heap
+
+
+
+MST = CALCULATE_MST(A)
+    - usar algoritmo de Kruskal para gerar essa AGM
+
+maximoArvore = MAX_AGM(G)
+
+while MST ≠ ∅ do
+    particao = MENOR_PARTICAO(List)
+        - Get partition Ps ∈ List that contains the smallest spanning tree
+        - gerar uma AGM para todas as partições
+        - determinar qual AGM é menor
+        - retornar essa partição
+
+
+    Write MST of Ps to Output_File
+    Remove Ps from List
+    PARTITION(Ps)
+
+
+
+PROCEDURE PARTITION(P)
+P1 = P2 = P;
+for each edge i in P do
+    if i not included in P and not excluded from P then
+        - como determinar isso? talvez seja interessante deixá-las separadas em listas
+        - qual o custo dessa separação?
+
+
+        make i excluded from P1;
+        make i included in P2;
+
+
+        CALCULATE_MST(P1);
+        if CONNECTED(P1) then
+            - como determinar a conexão? o algoritmo diz
+            add P1 to List;
+
+    P1 = P2;
+
+
+
+PROCEDURE CALCULATE_MST(P)
+Dados G =(N,M),  D =[dij ] a matriz distância de G.
+Ordene as arestas de G em ordem não decrescente das distâncias dij no vetor H = (hi), i =1,2,...,m
+    - usar Merge Sort
+T← {h1}
+i ← 2
+Enquanto |T| < n-1 faça
+    - verificar se todas  as arrestas já foram analisadas
+    Se T ∪ hi é um grafo acíclico então
+        - usar o algoritmo Union-Find
+
+        T ← T ∪ {hi}
+    i ← i + 1
+Retorna T {arestas da árvore geradora mínima}
