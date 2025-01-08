@@ -2,7 +2,7 @@
 
 ## Escrever instruções:
 ## Instalar bibliotecas
-```$ pip install networkx```
+```$ pip install networkx``` <br>
 ```$ pip install matpplotlib```
 
 ## Executar:
