@@ -1,16 +1,10 @@
-Markdown Live Preview
-Reset
-Copy
+# EnumeracaoArvoreGeradora
+
+## Escrever instruções:
+## Instalar bibliotecas
+```$ pip install networkx```
+```$ pip install matpplotlib```
 
 ## Executar:
-
-
-EnumeracaoArvoreGeradora
-Escrever instruções:
-Instalar bibliotecas
-$ pip install networkx
-$ pip install matpplotlib
-
-Executar:
-python main.py
+```python main.py```
 
